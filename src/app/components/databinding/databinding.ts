@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './databinding.css',
 })
 export class Databinding {
+  myName: string = 'virat kohli';
 
 }
