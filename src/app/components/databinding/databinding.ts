@@ -32,6 +32,7 @@ export class Databinding {
 
   }
   TypeInput:any;
+  remaining = 100;
   
   hiddenValue : boolean = false; 
   hide(){
@@ -44,17 +45,27 @@ export class Databinding {
 
   arthResult:any;
   selectedOp:any;
-  arth(a:any,b:any,c:any){
-    this.selectedOp = a;
-    if (a==='add'){
-      this.arthResult= Number(b) + Number(c);
-    }else if(a==='minus'){
-      this.arthResult= Number(b) - Number(c);
-    }else if(a==='multiply'){
-      this.arthResult= Number(b) * Number(c);
-    }else if(a==='division'){
-      this.arthResult= Number(b) / Number(c);
-    }
+ arth(a: string, b: any, c: any) {
+  this.selectedOp = a;
+  const x = Number(b);
+  const y = Number(c);
+
+  switch (a) {
+    case 'add':
+      this.arthResult = x + y;
+      break;
+    case 'minus':
+      this.arthResult = x - y;
+      break;
+    case 'multiply':
+      this.arthResult = x * y;
+      break;
+    case 'division':
+      this.arthResult = x / y;
+      break;
+    default:
+      this.arthResult = 'Invalid operation';
   }
+}
 
 }

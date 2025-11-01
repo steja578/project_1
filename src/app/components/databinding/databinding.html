@@ -103,15 +103,15 @@
  <div class="border border-2 rounded-2 m-2 p-2">
     <div>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</div>
     <div>
-        <input type="text" maxlength="100" [(ngModel)] = "TypeInput" placeholder="Length of input 100 characters">
-        <p>input:{{TypeInput}}</p>
+        <input type="text" maxlength="100" [(ngModel)] = "TypeInput" (ngModelChange)="remaining = 100 - TypeInput.length" placeholder="Length of input 100 characters">
+        <p>Remaining characters: {{ 100 - (TypeInput?.length || 0) }}</p>
     </div>
 </div>  
 
 <div class="border border-2 rounded-2 m-2 p-2">
     <div >3.Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a div</div>
     <select id="stateName" [(ngModel)]="stateN1" >
-        <option value="" disabled selected>Select a state</option>
+        <option value="" disabled selected>Selecct a state</option>
         <option value="california">California</option>
         <option value="texas">Texas</option>
         <option value="florida">Florida</option>
