@@ -31,4 +31,30 @@ export class Databinding {
     // this.addResult = parseInt(a) + parseInt(b); //  a+b
 
   }
+  TypeInput:any;
+  
+  hiddenValue : boolean = false; 
+  hide(){
+    this.hiddenValue = ! this.hiddenValue;
+  }
+  stateN:any;
+
+  
+ stateN1: string = ""; //// variable bound to the dropdown
+
+  arthResult:any;
+  selectedOp:any;
+  arth(a:any,b:any,c:any){
+    this.selectedOp = a;
+    if (a==='add'){
+      this.arthResult= Number(b) + Number(c);
+    }else if(a==='minus'){
+      this.arthResult= Number(b) - Number(c);
+    }else if(a==='multiply'){
+      this.arthResult= Number(b) * Number(c);
+    }else if(a==='division'){
+      this.arthResult= Number(b) / Number(c);
+    }
+  }
+
 }

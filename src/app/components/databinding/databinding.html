@@ -33,9 +33,10 @@
 </div>
 
 
-<div class="border border-2 rounded-2 p-2 mb-2">
-<h3>Attribute Binding</h3>
+<!-- <div class="border border-2 rounded-2 p-2 mb-2">
+<h3>Attribute Binding</h3> 
 <table class = "table">
+  <tbody>
   <tr>
     <th [attr.colspan]="col_span">Name</th>
     <th>Age</th>
@@ -50,10 +51,12 @@
     <td>Jackson</td>
     <td>57</td>
   </tr>
+  </tbody>
   
 </table>
 
 <table class = "table">
+  <tbody>
   <tr>
     <th [colSpan]="col_span">Name</th>
     <th>Age</th>
@@ -68,8 +71,9 @@
     <td>Jackson</td>
     <td>57</td>
   </tr>
+  </tbody> 
   
-</table>
+</table>-->
 <div class="border border-2 rounded-2 p-2 mb-2">
     <h3>Add 2 numbers using 2-way binding</h3>
     <input type = "number" [(ngModel)]="num1"/>
@@ -86,5 +90,63 @@
 
     <div>Addition result is::{{addResult}}</div>
 </div>
+
+
+<div>
+<div class="border border-2 rounded-2 m-2 p-2">
+    <div>1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph</div>
+    <h3 bind-hidden = "hiddenValue"> This is a hidden paragraph</h3>
+    <button class="btn btn-primary" (click) = hide()>Show/Hide</button>
+</div>
+
+
+ <div class="border border-2 rounded-2 m-2 p-2">
+    <div>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</div>
+    <div>
+        <input type="text" maxlength="100" [(ngModel)] = "TypeInput" placeholder="Length of input 100 characters">
+        <p>input:{{TypeInput}}</p>
+    </div>
+</div>  
+
+<div class="border border-2 rounded-2 m-2 p-2">
+    <div >3.Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a div</div>
+    <select id="stateName" [(ngModel)]="stateN1" >
+        <option value="" disabled selected>Select a state</option>
+        <option value="california">California</option>
+        <option value="texas">Texas</option>
+        <option value="florida">Florida</option>
+        <option value="new-york">New York</option>
+        <option value="illinois">Illinois</option>
+        <option value="pennsylvania">Pennsylvania</option>
+        <option value="ohio">Ohio</option>
+        <option value="georgia">Georgia</option>
+        <option value="north-carolina">North Carolina</option>
+        <option value="michigan">Michigan</option>
+    </select>
+
+    <!-- <button class = "btn btn-primary mx-2" (click)="getState(selectedState.value)">Get Selected State</button> -->
+
+    <div>Printing selected state : {{stateN1}}</div>
+
+</div>
+
+<div class="border border-2 rounded-2 m-2 p-2">
+    <div>4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</div>
+    <input input="number" #n3 />
+    <input input="number" ref-n4 class="mx-2"/>
+    <select id="operation" #operat>
+        <option value="" disabled selected>Select a arithmetic operator</option>
+        <option value="add">+</option>
+        <option value="minus">-</option>
+        <option value="multiply">*</option>
+        <option value="division">/</option>
+    </select>
+
+    <button class="btn btn-primary mx-2" (click)="arth(operat.value,n3.value,n4.value)">result</button>
+
+    <div>selected operator is {{selectedOp}} , result :{{arthResult}}</div>
+</div>
+
+
 
 </div>
