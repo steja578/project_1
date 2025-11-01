@@ -1,5 +1,90 @@
 <h3 class = " text-center">Data Binding in Angular</h3>
 
 <div class="border border-2 rounded-2 p-2 mb-2">
-<div>Name is :: {{myName}}</div>
+<div>Name is :: {{myName}}</div> 
+<div> Name is :: <span [innerText] = "myName"></span></div> 
+
+<img src = "{{imgUrl}}"/>
+<img [src] = "imgUrl" class = "mx-2"  />
+<img bind-src = "imgUrl"/>
+
+<div class = "py-3"></div>
+
+<div> 
+    <input type = "text" value="Bharath"/>
+    <input type = "text" value = "{{myName}}" class = "mx-2">
+    <input type = "text" [value] = "myName" class = "mx-2">
+    <input type = "text" bind-value = "myName">
+    2 way:<input type = "text" [(ngModel)] = "myName" class = "mx-2">
+
+</div>
+<div class = "m-2">   
+<button class="btn btn-primary" > Click</button>
+<button class="btn btn-primary m-2" disabled = "true"> Click</button>
+<button class="btn btn-primary " disabled = "{{flag}}"> Click</button>
+<button class="btn btn-primary m-2" [disabled] = "flag"> Click</button>
+<button class="btn btn-primary " bind-disabled = "flag"> Click</button>
+
+<button class="btn btn-primary m-2" (click)="toggleflag()">Toggle flag</button>
+<button class="btn btn-primary m-2" on-click="toggleflag()">Toggle flag</button>
+
+
+</div>
+</div>
+
+
+<div class="border border-2 rounded-2 p-2 mb-2">
+<h3>Attribute Binding</h3>
+<table class = "table">
+  <tr>
+    <th [attr.colspan]="col_span">Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>57</td>
+  </tr>
+  
+</table>
+
+<table class = "table">
+  <tr>
+    <th [colSpan]="col_span">Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>57</td>
+  </tr>
+  
+</table>
+<div class="border border-2 rounded-2 p-2 mb-2">
+    <h3>Add 2 numbers using 2-way binding</h3>
+    <input type = "number" [(ngModel)]="num1"/>
+    <input type = "number" [(ngModel)]="num2" class = "mx-2"/>
+    <div>Addition of {{num1}} & {{num2}} is ::{{num1+num2}}</div>
+</div>
+
+<div class="border border-2 rounded-2 p-2 mb-2">
+    <h3>Add 2 numbers using template reference</h3>
+    <input type = "number" #n1/>
+    <input type = "number" ref-n2 class = "mx-2"/>
+    <button class="btn btn-primary" (click)="performAdd(n1.value, n2.value)">Add</button>
+     <!-- <button class="btn btn-primary" (click)="performAdd(n1, n2)">Add</button> -->
+
+    <div>Addition result is::{{addResult}}</div>
+</div>
+
 </div>
