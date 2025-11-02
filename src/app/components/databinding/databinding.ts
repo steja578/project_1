@@ -68,4 +68,33 @@ export class Databinding {
   }
 }
 
+inputType= 'password';
+toggleType(){
+this.inputType = (this.inputType === 'password' && 'text') || 'password';
+}
+
+
+count = 0;
+decrement(){
+  this.count--;
+}
+increment(){
+  this.count++;
+}
+reset(){
+  this.count = 0;
+}
+
+ DarkMode: boolean = false;
+toggleTheme(){
+ this.DarkMode = !this.DarkMode
+
+}
+
+celsius: number = 0;
+fahrenheit: number = 0;
+convert(){
+  this.fahrenheit = (this.celsius * 9/5) + 32
+}
+
 }

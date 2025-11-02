@@ -147,6 +147,30 @@
     <div>selected operator is {{selectedOp}} , result :{{arthResult}}</div>
 </div>
 
+<div class = "border border-2 rounded-2 p-2 mb-2" >
+  <h4>5. create a input box, toggle the type of that input box to (text/password) </h4>
+  <input [type]="inputType" placeholder="Enter password"/>
+  <button class="btn btn-primary m-2"  (click)="toggleType()">Toggle</button>
+</div>
 
+<div class = "border border-2 rounded-2 p-2 mb-2">
+  <div>6. create a counter example with 3 controls(increment,decrement,reset)</div>
+  <p>Count : {{count}}</p>
+  <button class="btn btn-primary p-2  mb-2" (click)="increment()">Increment</button>
+  <button class="btn btn-primary p-2 mx-2 mb-2" (click)="decrement()">Decrecement</button>
+  <button class="btn btn-primary p-2 mb-2" (click)="reset()">Reset</button>
+</div>
 
+<div class = "border border-2 rounded-2 p-2 mb-2">
+  <div>7. Have a toggle button and control Dark/Light theme of a page.</div>
+  <div [class.dark-theme]="DarkMode" [class.light-theme]="!DarkMode" class = "text-center p-3 m-2"> If you click toggle button, theme will change in text area</div>
+  <button class="btn btn-primary p-2 m-2" (click)="toggleTheme()"> Dark/Light</button>
+</div>
+
+<div class = "border border-2 rounded-2 p-2 mb-2">
+  <div>8. Temperature Converter (celcius to fahrenheit)</div>
+  <input type="number" [(ngModel)]="celsius">
+  <button class="btn btn-primary p-2 m-2" (click)="convert()">Convert</button>
+  <p>Fahrenheit: {{ fahrenheit }}</p>
+  
 </div>
