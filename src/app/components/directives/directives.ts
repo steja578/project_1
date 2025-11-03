@@ -26,6 +26,7 @@ export class Directives {
 
 flag: boolean = true;
 
+
 mystyle1 ={
   color: 'red',
   padding: '10px',
@@ -35,6 +36,7 @@ mystyle2 ={
   color: 'blue',
   padding: '10px',
   border: '25px dotted yellow'
+
 }
 myfunction(){
   return this.flag? this.mystyle1 : this.mystyle2;
