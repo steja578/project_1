@@ -105,4 +105,5 @@ employees = [
   { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
 ];
 
+num : number = 4;
 }
