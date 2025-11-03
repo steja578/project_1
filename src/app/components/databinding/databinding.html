@@ -174,3 +174,27 @@
   <p>Fahrenheit: {{ fahrenheit }}</p>
   
 </div>
+
+<div class="border border-2 rounded-2 m-2 p-2">
+  <div>Employees table using for directives</div>
+<table class="table table-bordered">
+    <thead><tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Gender</th>
+    </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees;track $index){
+            <tr>
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
+</div>
