@@ -41,4 +41,37 @@ mystyle2 ={
 myfunction(){
   return this.flag? this.mystyle1 : this.mystyle2;
 }
+
+
+filter = 'All';
+  taskArr = [
+    { title: 'Complete Angular assignment', completed: false },
+    { title: 'Review pull requests', completed: true },
+    { title: 'Prepare project report', completed: false },
+    { title: 'Attend team meeting', completed: true },
+    { title: 'Update documentation', completed: false }
+  ];
+
+  
+
+  cartItems = [
+    { id: 1, name: 'Wireless Headphones', price: 2499, qty: 1 },
+    { id: 2, name: 'Smart Watch', price: 4999, qty: 2 },
+    { id: 3, name: 'Bluetooth Speaker', price: 1999, qty: 1 },
+    { id: 4, name: 'Power Bank', price: 1299, qty: 3 }
+  ];
+
+  increaseQty(item: any) {
+    item.qty++;
+  }
+
+  decreaseQty(item: any) {
+    if (item.qty > 1) {
+      item.qty--;
+    }
+  }
+
+  getTotal(): number {
+    return this.cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+  }
 }

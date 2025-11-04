@@ -106,4 +106,67 @@
   <button class ="btn btn-primary mx-2" [ngClass]= "num %2 == 0 ? 'btn-success' : 'btn-danger' "> Click Me</button>
 </div>
 
-<div>   </div>
+<div class="border border-2 rounded-3 p-3 m-3"></div>
+<div>Assignment 1 : Task List </div>
+<ul>
+  @for(task of taskArr ; track $index){
+    <li>
+      <input type = "checkbox" (change) = "task.completed = !task.completed" [checked]="task.completed"/>
+      <span>{{task.title}}</span>
+      <span>{{task.completed ? ' (completed) ' : ' (not completed) '}}</span>
+    </li>
+  }
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="border border-2 rounded-3 p-3 m-3">
+  <h5 class ="text-center"> Shopping Cart</h5>
+
+  @for (item of cartItems; track item.id) {
+    <div>
+      <div>
+        <h5>{{ item.name }}</h5>
+        <div>{{ item.price }} each</div>
+      </div>
+
+      <div>
+        <span>quantity - {{ item.qty }}</span>
+        <button class="btn btn-danger mx-2" (click)="decreaseQty(item)">-</button>
+        <button class="btn btn-success"(click)="increaseQty(item)">+</button>
+      </div>
+
+      <div>
+        {{ item.price * item.qty }}
+      </div>
+    </div>
+  }
+
+  <div>
+    <h5>Total: {{ getTotal() }}</h5>
+  </div>
+</div>
+</div>
