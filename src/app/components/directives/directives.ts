@@ -51,7 +51,7 @@ filter = 'All';
     { title: 'Attend team meeting', completed: true },
     { title: 'Update documentation', completed: false }
   ];
-
+    selectedTaskState : string = 'all';
   
 
   cartItems = [
