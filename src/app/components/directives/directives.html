@@ -127,30 +127,37 @@
 </div>
 
 
-  <div class="border border-2 rounded-3 p-3 m-3">
-  <h5 class ="text-center"> Shopping Cart</h5>
+<div class="border border-2 rounded-2 p-2 m-2">
+  <div>Assignment-2 : Cart List</div>
 
-  @for (item of cartItems; track item.id) {
-    <div>
-      <div>
-        <h5>{{ item.name }}</h5>
-        <div>{{ item.price }} each</div>
-      </div>
-
-      <div>
-        <span>quantity - {{ item.qty }}</span>
-        <button class="btn btn-danger mx-2" (click)="decreaseQty(item)">-</button>
-        <button class="btn btn-success"(click)="increaseQty(item)">+</button>
-      </div>
-
-      <div>
-        {{ item.price * item.qty }}
-      </div>
-    </div>
-  }
-
-  <div>
-    <h5>Total: {{ getTotal() }}</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (cartObj of cartItems; track $index) {
+        <tr>
+          <td>{{cartObj.id}}</td>
+          <td>{{cartObj.name}}</td>
+          <td>{{cartObj.price}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="decreaseQty(cartObj)">-</button>
+            {{cartObj.qty}}
+            <button class="btn btn-primary" (click)="increaseQty(cartObj)">+</button>
+          </td>
+          <td>{{cartObj.qty * cartObj.price }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div class="text-end">
+    <b>Total Cart Value:: {{totalCartValue}}</b>
   </div>
-</div>
+  
 </div>

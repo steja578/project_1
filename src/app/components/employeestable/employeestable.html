@@ -1,0 +1,37 @@
+<div class="border border-2 rounded-2 m-2 p-2">Employees table data
+<table class="table table-bordered">
+    <thead><tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Salary(Badge style)</th>
+    <th>Gender</th>
+    <th>Status</th>
+    <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees;track $index){
+            <tr [ngClass]="{'inactive': emp.status === 'inactive',
+      'manager': emp.role === 'manager',
+    'developer': emp.role === 'developer',
+'tester': emp.role === 'tester'}">
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td [ngStyle]="emp.sal > 50000 ? {'color':'green'} : {'color':'red'}">{{ emp.sal }}</td>
+            <td>
+            <span class="badge"
+            [ngClass]="{
+              'badge-green': emp.sal > 70000,
+              'badge-orange': emp.sal >= 40000 && emp.sal <= 70000,
+              'badge-red': emp.sal < 40000
+            }">{{ emp.sal }} </span></td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.status}}</td>
+            <td>{{emp.role}}</td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
+</div>

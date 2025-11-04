@@ -1,0 +1,36 @@
+.inactive td {
+  color : red
+}
+.manager td {
+    font-weight: bold;
+    color:blue;
+    background-color: lightyellow;
+}
+.developer td {
+  background-color: lightblue;
+}
+
+.tester td {
+  background-color: lightpink;
+}
+.badge-green {
+  background-color: green;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+.badge-orange {
+  background-color: orange;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+.badge-red {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
