@@ -109,13 +109,13 @@
 <div>
 <div class="border border-2 rounded-3 p-3 m-3">
 <div>Assignment 1 : Task List </div>
-<select [(ngModel)]="selectedTaskState">
+<select [(ngModel)]="selectedTaskState" (change)="filterTasksArray()">
   <option value="all">All</option>
   <option value="completed">Completed</option>
   <option value="pending">Pending</option>
 </select>
 <ul>
-  @for(task of taskArr ; track $index){
+  @for(task of filterTasksArray();track $index){
     <li>
       <input type = "checkbox" (change) = "task.completed = !task.completed" [checked]="task.completed"/>
       <span class ="mx-3" [style.text-decoration] = "task.completed ? 'line-through' : 'none'">{{task.title}}</span>

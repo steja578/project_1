@@ -52,6 +52,16 @@ filter = 'All';
     { title: 'Update documentation', completed: false }
   ];
     selectedTaskState : string = 'all';
+    filterTasksArray() {
+      if(this.selectedTaskState === 'all'){
+        return this.taskArr;
+      }else if(this.selectedTaskState === 'completed'){
+        return this.taskArr = this.taskArr.filter(task => task.completed);
+      }else (this.selectedTaskState === 'pending')
+      {
+        return this.taskArr = this.taskArr.filter(task => !task.completed);
+      }
+    }
   
 
   cartItems = [
