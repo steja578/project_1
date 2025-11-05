@@ -10,26 +10,33 @@
       </select>
     </div>
     <div class="col-sm-8">
-      <input type="search" class="col-sm-8" placeholder="Search..." />
+      <input type="search" placeholder="Search by title or description" [(ngModel)]="searchText" (change)="onSearch()"/>
       <button class="btn btn-secondary">Search</button>
     </div>
     <div class="col-sm-2">
-      <button class="btn btn-primary mx-1">Asc</button>
-      <button class="btn btn-secondary">Desc</button>
+      <button class="btn btn-primary mx-1" (click)="sortAsc()">Asc</button>
+      <button class="btn btn-secondary" (click)="sortDesc()">Desc</button>
     </div>
   </div>
   <div class="row">
-    @for(product of filteredProducts;track $index){
+    @for(product of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p};track $index){
     <div class="col-sm-3 card">
       <img src="{{ product.image }}" class="card-img-top" style="height: 200px" />
       <div class="card-body text-center">
         <h5 class="card-title text-truncate">{{ product.category }}</h5>
         <p class="card-text text-truncate">{{ product.description }}</p>
         <p class="card-text">{{ product.title }}</p>
-        <p class="card-text">Price: {{ product.price }}</p>
-        <p class="card-text">Ratings: {{ product.rating.rate }}</p>
+        <p class="card-text">Price: {{ product.price }} </p>
+        <p class="card-text">Ratings: {{ product.rating.rate }} <fa-icon [icon]="faStar"></fa-icon> </p>
+        
       </div>
     </div>
     }
+  </div>
+  <div class="row">
+    <div class="text-center m-4">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    
   </div>
 </div>
