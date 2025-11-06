@@ -9,8 +9,14 @@ import { Products } from '../products/products';
 
 @Component({
   selector: 'app-body',
-  imports: [Databinding,
-    TopDeals, Directives, Employeestable, MyModel, UserList, Products],
+  imports: [
+  // Databinding,
+  //   TopDeals, 
+  // Directives, 
+  // Employeestable, 
+  // MyModel, 
+  // UserList, 
+  Products],
   templateUrl: './body.html',
   styleUrl: './body.css',
 })

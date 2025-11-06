@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { faStar } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Textonly} from '../../custom_directives/textonly';
 
 @Component({
   selector: 'app-products',
   imports: [
-    FormsModule, FontAwesomeModule, NgxPaginationModule
+    FormsModule, FontAwesomeModule, NgxPaginationModule, Textonly
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -34,7 +35,10 @@ export class Products {
   }
 
 
-
+  onSearch()
+  {
+    this.filteredProducts= this.filteredProducts.filter(p => (p.title.toLowerCase().includes ( this.searchText.toLowerCase())) || (p.description.toLowerCase().includes(this.searchText.toLowerCase())));
+  }
 
   sortAsc()
   {
