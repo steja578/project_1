@@ -6,17 +6,20 @@ import { Employeestable } from "../employeestable/employeestable";
 import { MyModel } from "../my-model/my-model";
 import { UserList } from '../user-list/user-list';
 import { Products } from '../products/products';
+import { EmployeeCRUD } from '../employee-crud/employee-crud';
 
 @Component({
   selector: 'app-body',
   imports: [
+    EmployeeCRUD
   // Databinding,
   //   TopDeals, 
   // Directives, 
   // Employeestable, 
   // MyModel, 
   // UserList, 
-  Products],
+  // Products
+  ],
   templateUrl: './body.html',
   styleUrl: './body.css',
 })

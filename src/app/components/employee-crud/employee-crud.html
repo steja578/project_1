@@ -1,1 +1,66 @@
-<p>employee-crud works!</p>
+<div class= "border border-2 rounded-2 m-2 p-2">
+    <h3>EmployeeCURD</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Role</th>
+            <th>Employees<button class="btn btn-success mx-2"  (click)="addEmployee()"><fa-icon [icon]="faUserPlus"></fa-icon></button></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for( emp of employees; track $index)
+            {
+                <tr>
+                    <td>{{emp.eId}} </td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>{{emp.status}}</td>
+                    <td>{{emp.role}}</td>
+                    <th>
+                        <button class="btn btn-danger" (click) = "deleteEmployeeCRUD(emp.eId)"><fa-icon [icon]="faTrash"></fa-icon></button>
+                        <button class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#viewModal" (click) = "viewEmployeeCRUD(emp)"><fa-icon [icon]="faEye"></fa-icon></button>
+                        
+                        
+                    </th>
+                </tr>
+                
+            }
+        </tbody>
+        
+    </table>
+    <!-- Bootstrap Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="viewModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body" *ngIf="selectedEmployee">
+        <p><strong>ID:</strong> {{ selectedEmployee.eId }}</p>
+        <p><strong>Name:</strong> {{ selectedEmployee.name }}</p>
+        <p><strong>Salary:</strong> {{ selectedEmployee.sal }}</p>
+        <p><strong>Gender:</strong> {{ selectedEmployee.gender }}</p>
+        <p><strong>Status:</strong> {{ selectedEmployee.status }}</p>
+        <p><strong>Role:</strong> {{ selectedEmployee.role }}</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+</div>
