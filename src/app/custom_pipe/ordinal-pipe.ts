@@ -5,8 +5,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrdinalPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+ transform(input:any){ // transform mwthod will take some input and return output
+  let rem = input % 10;
+  let res = '';
+
+  if(rem===1)
+  {
+    res = `${input}st`
+  }else if (rem === 2)
+  {
+    res = `${input}nd`
+  }else if (rem===3)
+  {
+    res = `${input}rd`
+  }else{
+    res = `${input}th`
   }
+  return res;
+ }
 
 }
