@@ -7,11 +7,13 @@ import { MyModel } from "../my-model/my-model";
 import { UserList } from '../user-list/user-list';
 import { Products } from '../products/products';
 import { EmployeeCRUD } from '../employee-crud/employee-crud';
+import { Pipes } from '../pipes/pipes';
 
 @Component({
   selector: 'app-body',
   imports: [
-    EmployeeCRUD
+    Pipes
+    // EmployeeCRUD
   // Databinding,
   //   TopDeals, 
   // Directives, 
