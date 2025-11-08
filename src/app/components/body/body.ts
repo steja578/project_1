@@ -8,20 +8,23 @@ import { UserList } from '../user-list/user-list';
 import { Products } from '../products/products';
 import { EmployeeCRUD } from '../employee-crud/employee-crud';
 import { Pipes } from '../pipes/pipes';
+import { ProductAssignment } from "../product-assignment/product-assignment";
 
 @Component({
   selector: 'app-body',
   imports: [
     Pipes
     // EmployeeCRUD
-  // Databinding,
-  //   TopDeals, 
-  // Directives, 
-  // Employeestable, 
-  // MyModel, 
-  // UserList, 
-  // Products
-  ],
+    // Databinding,
+    //   TopDeals, 
+    // Directives, 
+    // Employeestable, 
+    // MyModel, 
+    // UserList, 
+    // Products
+    ,
+    ProductAssignment
+],
   templateUrl: './body.html',
   styleUrl: './body.css',
 })

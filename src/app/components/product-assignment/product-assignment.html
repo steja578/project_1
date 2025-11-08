@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    @for(product of productsData;track $index){
+      
+      <div class="col-sm-2 card">
+        <app-product-assignment-item [passDataToChild] = "product"></app-product-assignment-item>
+      </div>
+    }
+ 
+  </div>
+</div>
