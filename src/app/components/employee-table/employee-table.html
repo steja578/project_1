@@ -1,1 +1,43 @@
-<p>employee-table works!</p>
+<!-- <tr>
+<td>{{ employee.eId }}</td>
+<td>{{ employee.name }}</td>
+<td>{{ employee.sal }}</td>
+<td>{{ employee.gender }}</td>
+<td>{{ employee.dept }}</td>
+<td>{{ employee.status }}</td>
+<td>{{ employee.role }}</td>
+<td>
+  <button class="btn btn-sm btn-danger" (click)="delete(employee.eId)">Delete</button>
+</td>
+</tr> -->
+
+<table class="table table-bordered table-striped table-sm text-center align-middle">
+  <thead class="table-light">
+    <tr>
+      <th>EId</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <th>Department</th>
+      <th>Status</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of employee; track $index) {
+    <tr>
+      <td>{{ emp.eId }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.sal }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.dept }}</td>
+      <td>{{ emp.status }}</td>
+      <td>{{ emp.role }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="delete(emp.eId)">Delete</button>
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>

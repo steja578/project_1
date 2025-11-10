@@ -10,10 +10,13 @@ import { EmployeeCRUD } from '../employee-crud/employee-crud';
 import { Pipes } from '../pipes/pipes';
 import { ProductAssignment } from "../product-assignment/product-assignment";
 import { ParentDemo } from "../parent-demo/parent-demo";
+import { EmployeeAdd } from "../employee-add/employee-add";
+import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-crud-assignment';
 
 @Component({
   selector: 'app-body',
   imports: [
+    EmployeeCrudAssignment
     // Pipes
     // EmployeeCRUD
     // Databinding,
@@ -23,9 +26,8 @@ import { ParentDemo } from "../parent-demo/parent-demo";
     // MyModel, 
     // UserList, 
     // Products
-      ParentDemo,
-    // ProductAssignment,
-    // ParentDemo
+    // ParentDemo,
+    // EmployeeAdd
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
