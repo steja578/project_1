@@ -1,1 +1,19 @@
-<p>parent-demo works!</p>
+<div class="container">
+    <div class="row border border-2 rounded-2">
+        <h3 class="text-center"> This is parent component</h3>
+        <div>my own data is :: {{a}}</div>
+        <div>my child2 data is::{{child2.b}}</div>
+        <div>my child2 data is::{{user | json}}</div>
+        
+
+
+    <div class="row">
+        <div class="col-sm-6 border border-2 rounded-2"> 
+            <app-child1-demo [child1]="a" [b]="child2.b"></app-child1-demo>
+        </div>
+        <div class="col-sm-6 border border-2 rounded-2">
+            <app-child2-demo [child2]="a" #child2 (userEvent)='receiveDataFromChild($event)'></app-child2-demo> 
+        </div>
+    </div>
+  </div>
+</div>

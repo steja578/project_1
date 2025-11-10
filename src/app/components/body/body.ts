@@ -9,11 +9,12 @@ import { Products } from '../products/products';
 import { EmployeeCRUD } from '../employee-crud/employee-crud';
 import { Pipes } from '../pipes/pipes';
 import { ProductAssignment } from "../product-assignment/product-assignment";
+import { ParentDemo } from "../parent-demo/parent-demo";
 
 @Component({
   selector: 'app-body',
   imports: [
-    Pipes
+    // Pipes
     // EmployeeCRUD
     // Databinding,
     //   TopDeals, 
@@ -22,8 +23,9 @@ import { ProductAssignment } from "../product-assignment/product-assignment";
     // MyModel, 
     // UserList, 
     // Products
-    ,
-    ProductAssignment
+      ParentDemo,
+    // ProductAssignment,
+    // ParentDemo
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
