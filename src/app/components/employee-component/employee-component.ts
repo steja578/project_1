@@ -13,7 +13,6 @@ export class EmployeeComponent {
 
   employeeService  = inject(EmployeeService);
 
-
   selectedCategory:any = "allEmployees";
   employee_data :any[] =[];
 

@@ -21,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        @for(emp of employee_data;track emp.eId){
+        @for(emp of employee_data;track $index){
             <tr class ="border border-3">
             <td>{{emp.eId}}</td>
             <td>{{emp.name}}</td>
