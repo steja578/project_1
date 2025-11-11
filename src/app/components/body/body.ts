@@ -12,12 +12,15 @@ import { ProductAssignment } from "../product-assignment/product-assignment";
 import { ParentDemo } from "../parent-demo/parent-demo";
 import { EmployeeAdd } from "../employee-add/employee-add";
 import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-crud-assignment';
+import { ProductTable } from '../product-table/product-table';
 
 @Component({
   selector: 'app-body',
   imports: [
-    EmployeeCrudAssignment
+    ProductTable,
+    // EmployeeCrudAssignment
     // Pipes
+    
     // EmployeeCRUD
     // Databinding,
     //   TopDeals, 
@@ -25,7 +28,7 @@ import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-cru
     // Employeestable, 
     // MyModel, 
     // UserList, 
-    // Products
+    Products
     // ParentDemo,
     // EmployeeAdd
 ],
