@@ -7,7 +7,7 @@ export class EmployeeService {
   employees=[{}]
   getAllEmployees()
   {
-
+    
   } 
   getMaleEmployees(){
 
