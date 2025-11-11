@@ -13,11 +13,13 @@ import { ParentDemo } from "../parent-demo/parent-demo";
 import { EmployeeAdd } from "../employee-add/employee-add";
 import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-crud-assignment';
 import { ProductTable } from '../product-table/product-table';
+import { EmployeeComponent } from '../employee-component/employee-component';
 
 @Component({
   selector: 'app-body',
   imports: [
     ProductTable,
+    EmployeeComponent,
     // EmployeeCrudAssignment
     // Pipes
     
