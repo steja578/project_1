@@ -14,15 +14,16 @@ import { EmployeeAdd } from "../employee-add/employee-add";
 import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-crud-assignment';
 import { ProductTable } from '../product-table/product-table';
 import { EmployeeComponent } from '../employee-component/employee-component';
+import { CommentList } from "../comment-list/comment-list";
 
 @Component({
   selector: 'app-body',
   imports: [
-    ProductTable,
-    EmployeeComponent,
+    
+    // ProductTable,
+    // EmployeeComponent,
     // EmployeeCrudAssignment
     // Pipes
-    
     // EmployeeCRUD
     // Databinding,
     //   TopDeals, 
@@ -30,9 +31,10 @@ import { EmployeeComponent } from '../employee-component/employee-component';
     // Employeestable, 
     // MyModel, 
     // UserList, 
-    Products
+    // Products
     // ParentDemo,
-    // EmployeeAdd
+    // EmployeeAdd,
+    CommentList
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
