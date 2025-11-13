@@ -1,1 +1,29 @@
-<p>stockdata works!</p>
+<h3 class ="text-center"> Fetching the data base</h3>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+    <tr>
+      <th>Ticker Symbol</th>
+      <th>Sector ID</th>
+      <th>SubSector ID</th>
+      <th>MarketCap</th>
+      <th>CurrentRatio</th>
+      <th>cumulativeReturn</th>
+    </tr>
+  </thead>
+    <tbody>
+    @for (stock of stockdata;track $index){
+        <tr>
+            <td>{{stock?.tickerSymbol}}</td> 
+            <td>{{stock?.sectorID}}</td>
+            <td>{{stock?.subSectorID}}</td>
+            <td>{{stock?.marketCap}}</td>
+            <td>{{stock?.currentRatio}}</td>
+            <td>{{stock?.cumulativeReturn || 'null'}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+<!-- ?. optional chaining operator -->

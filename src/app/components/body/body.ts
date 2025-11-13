@@ -15,6 +15,7 @@ import { EmployeeCrudAssignment } from '../employee-crud-assignment/employee-cru
 import { ProductTable } from '../product-table/product-table';
 import { EmployeeComponent } from '../employee-component/employee-component';
 import { CommentList } from "../comment-list/comment-list";
+import { Stockdata } from '../stockdata/stockdata';
 
 @Component({
   selector: 'app-body',
@@ -34,7 +35,8 @@ import { CommentList } from "../comment-list/comment-list";
     // Products
     // ParentDemo,
     // EmployeeAdd,
-    CommentList
+    // CommentList
+    Stockdata
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

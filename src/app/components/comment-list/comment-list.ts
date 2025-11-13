@@ -14,8 +14,8 @@ export class CommentList {
   }
 
   ngOnInit(){
-    this.httpClient.get(this.comments_url).subscribe((response: any) => {
-      this.commentArr = response;
+    this.httpClient.get(this.comments_url).subscribe((response: any) => {    // to get the data from url we write .subscribe in subscrive we we will get response 
+      this.commentArr = response; 
     });
   }
 
