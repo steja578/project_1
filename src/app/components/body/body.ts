@@ -16,10 +16,12 @@ import { ProductTable } from '../product-table/product-table';
 import { EmployeeComponent } from '../employee-component/employee-component';
 import { CommentList } from "../comment-list/comment-list";
 import { Stockdata } from '../stockdata/stockdata';
+import { EmployeeList } from '../employee-list/employee-list';
 
 @Component({
   selector: 'app-body',
   imports: [
+    EmployeeList
     
     // ProductTable,
     // EmployeeComponent,
@@ -36,7 +38,7 @@ import { Stockdata } from '../stockdata/stockdata';
     // ParentDemo,
     // EmployeeAdd,
     // CommentList
-    Stockdata
+    // Stockdata
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
