@@ -16,12 +16,14 @@ import { ProductTable } from '../product-table/product-table';
 import { EmployeeComponent } from '../employee-component/employee-component';
 import { CommentList } from "../comment-list/comment-list";
 import { Stockdata } from '../stockdata/stockdata';
-import { EmployeeList } from '../employee-list/employee-list';
+// import { EmployeeList } from '../employee-list/employee-list';
+import { Crudcomponent } from '../crudcomponent/crudcomponent';
 
 @Component({
   selector: 'app-body',
   imports: [
-    EmployeeList
+    Crudcomponent
+    // EmployeeList
     
     // ProductTable,
     // EmployeeComponent,
