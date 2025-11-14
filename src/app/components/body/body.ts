@@ -18,13 +18,14 @@ import { CommentList } from "../comment-list/comment-list";
 import { Stockdata } from '../stockdata/stockdata';
 // import { EmployeeList } from '../employee-list/employee-list';
 import { Crudcomponent } from '../crudcomponent/crudcomponent';
+import { ObservableDemo } from "../../componenets/observable-demo/observable-demo";
 
 @Component({
   selector: 'app-body',
   imports: [
-    Crudcomponent
-    // EmployeeList
     
+    // Crudcomponent
+    // EmployeeList
     // ProductTable,
     // EmployeeComponent,
     // EmployeeCrudAssignment
@@ -41,6 +42,8 @@ import { Crudcomponent } from '../crudcomponent/crudcomponent';
     // EmployeeAdd,
     // CommentList
     // Stockdata
+    
+    ObservableDemo
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
