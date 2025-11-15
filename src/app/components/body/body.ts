@@ -19,11 +19,12 @@ import { Stockdata } from '../stockdata/stockdata';
 // import { EmployeeList } from '../employee-list/employee-list';
 import { Crudcomponent } from '../crudcomponent/crudcomponent';
 import { ObservableDemo } from "../../componenets/observable-demo/observable-demo";
+import { Revision } from '../revision/revision';
 
 @Component({
   selector: 'app-body',
   imports: [
-    
+    Revision
     // Crudcomponent
     // EmployeeList
     // ProductTable,
@@ -43,7 +44,7 @@ import { ObservableDemo } from "../../componenets/observable-demo/observable-dem
     // CommentList
     // Stockdata
     
-    ObservableDemo
+    // ObservableDemo
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

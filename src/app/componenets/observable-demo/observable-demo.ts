@@ -14,7 +14,7 @@ export class ObservableDemo {
   private httpClient = inject(HttpClient);
 
   ngOnInit(){
-    this.fetchUserData();
+    // this.fetchUserData();
     // this.createAndUseCustomObservable();
   }
 
