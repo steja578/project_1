@@ -15,16 +15,16 @@ export class ObservableDemo {
 
   ngOnInit(){
     this.fetchUserData();
-    this.createAndUseCustomObservable();
+    // this.createAndUseCustomObservable();
   }
 
-  fetchUserData() {
-    this.httpClient.get(this.user_url).subscribe(
-      (partialResponse) => {
-        console.log(partialResponse)
-      }
-    )
-}
+//   fetchUserData() {
+//     this.httpClient.get(this.user_url).subscribe(
+//       (partialResponse) => {
+//         console.log(partialResponse)
+//       }
+//     )
+// }
 
 createAndUseCustomObservable() {
 const carsPublisher = new Observable((publisher)=> {
