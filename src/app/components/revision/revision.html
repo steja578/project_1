@@ -21,5 +21,35 @@
     </div>
 </div> -->
 
- 
+ <div>my name is :: {{myName}}</div>
+ <div >my name is :: <span [innerText]="myName"> </span></div>
+ <div>
+<img src="{{imgurl}}" alt=""/>
+<img [src]="imgurl" alt="" class="mx-2"/>
+<input type="text" value="Bharath"/>
+<input type="text" value={{myName}} class="mx-2"/>
+<input type="text" [value]="myName" class="mx-2"/>
+<div>
+2way: <input type="text" [(ngModel)]="myName"/>
+</div>
+</div>
 
+<div>
+    <button class="btn btn-primary" >Click me</button>
+    <button class="btn btn-primary" disabled="{{flag}}">Click me</button>
+    <button class="btn btn-primary" [disabled]="flag">Click me</button>
+
+<button class="btn btn-primary" (click)="toggle()">togglebutton</button>
+<button class="btn btn-primary" on-click="toggle()">togglebutton</button>
+
+</div>
+
+<table class="border-2 border-2 rounded-2">
+    <thead >
+        <tr>
+            <td>hi</td>
+            <td>hello</td>
+            <td>how are you</td>
+        </tr>
+    </thead>
+</table>
