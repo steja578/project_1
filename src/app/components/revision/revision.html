@@ -53,3 +53,10 @@
         </tr>
     </thead>
 </table>
+
+<div>
+    <input type="number" #n1>
+    <input type="number" ref-n2 class="mx-2">
+    <button class="btn btn-primary"(click)="addition(n1.value, n2.value)">add</button>
+    <div>addition value is:: {{addresult}}</div>
+</div>
