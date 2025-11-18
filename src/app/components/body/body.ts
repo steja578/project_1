@@ -34,7 +34,7 @@ import { Revision } from '../revision/revision';
     // EmployeeCRUD
     // Databinding,
     //   TopDeals, 
-    // Directives, 
+    // Directives 
     // Employeestable, 
     // MyModel, 
     // UserList, 
