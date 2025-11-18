@@ -61,7 +61,7 @@
     <div>addition value is:: {{addresult}}</div>
 </div> -->
 
-<h3>day5 assignment</h3>
+
 <!-- 1. Declare an array of users, display users in card & table format. 
  add a button/switch to toggle between table view and card view.
  https://jsonplaceholder.typicode.com/users
@@ -74,6 +74,7 @@ employees = [
 ]; -->
 <!-- //table>thead*4^^tr*4>td*4 -->
 <!-- <div>
+    <h3>day5 assignment</h3>
     <button class="btn btn-primary" (click)="toggle()">
  {{ table ? 'Show Card View' : 'Show Table View' }}
     </button>
@@ -123,3 +124,12 @@ employees = [
 
 </div> -->
 
+<div>
+    <h3>day6</h3>
+    <ol>
+        @for(car of cars;track $index){
+            <li>{{car}}</li>
+
+        }
+    </ol>
+</div>

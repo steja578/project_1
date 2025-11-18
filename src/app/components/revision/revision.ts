@@ -37,5 +37,8 @@ export class Revision {
 //   this.table=!this.table;
 // }
 // }
+
+//day6:
+cars=['honda','tata', 'ford', 'rangerover'];
 }
 
