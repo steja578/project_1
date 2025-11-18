@@ -23,3 +23,5 @@ addresult:any;
 // this.addresult=Number(a) + Number(b);
   }
 }
+
+
