@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="row">
-    @for(product of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p};track $index){
+    @for(product of filteredProducts;track $index){
     <div class="col-sm-3 card">
       <img src="{{ product.image }}" class="card-img-top" style="height: 200px" />
       <div class="card-body text-center">
