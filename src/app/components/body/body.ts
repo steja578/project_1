@@ -20,11 +20,12 @@ import { Stockdata } from '../stockdata/stockdata';
 import { Crudcomponent } from '../crudcomponent/crudcomponent';
 import { ObservableDemo } from "../../componenets/observable-demo/observable-demo";
 import { Revision } from '../revision/revision';
+import { Test } from '../test/test';
 
 @Component({
   selector: 'app-body',
   imports: [
-    Revision
+    // Revision
     // Crudcomponent
     // EmployeeList
     // ProductTable,
@@ -43,7 +44,7 @@ import { Revision } from '../revision/revision';
     // EmployeeAdd,
     // CommentList
     // Stockdata
-    
+    Test
     // ObservableDemo
 ],
   templateUrl: './body.html',
