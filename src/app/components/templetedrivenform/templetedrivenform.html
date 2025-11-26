@@ -1,0 +1,37 @@
+<h3 class="text-center "> templete driven form</h3>
+
+
+<div class = "border border-2 rounded-2 m-2 p-2">
+    <form #signUpForm="ngForm" (submit)="submitForm(signUpForm)"> 
+            <p>
+            FirstName:
+            <input name="firstName" ngModel/>
+             </p>
+            <p>
+                LastName:
+                <input name="lirstName" ngModel/>
+            </p>
+            <p>
+                Email:
+                <input name="email" ngModel/>
+            </p>
+
+            <div ngModelGroup="address">
+                <p>
+                City:
+                <input name="city" ngModel/>
+            </p>
+            <p>
+                State:
+                <input name="state" ngModel/>
+            </p>
+
+            </div> 
+            <input type="reset" value="Clear" class="btn btn-danger ml-5">
+            <input type="Submit" value="Submit"  class="btn btn-primary ml-5">
+    </form>
+    <hr>
+    <pre>
+        {{signUpForm.value | json}}
+    </pre>
+</div>

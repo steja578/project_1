@@ -21,6 +21,8 @@ import { Crudcomponent } from '../crudcomponent/crudcomponent';
 import { ObservableDemo } from "../../componenets/observable-demo/observable-demo";
 import { Revision } from '../revision/revision';
 import { Test } from '../test/test';
+import { Formsdemo1 } from "../formsdemo1/formsdemo1";
+import { Templetedrivenform } from "../templetedrivenform/templetedrivenform";
 
 @Component({
   selector: 'app-body',
@@ -44,8 +46,12 @@ import { Test } from '../test/test';
     // EmployeeAdd,
     // CommentList
     // Stockdata
-    Test
+    // Test
     // ObservableDemo
+    Templetedrivenform
+    ,
+    Formsdemo1,
+    Templetedrivenform
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
