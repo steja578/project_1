@@ -12,7 +12,7 @@ import { CommonEngine } from '@angular/ssr/node';
 export class Templetedrivenform {
 
   submitForm(form:any){
-    
+    console.log(form.value);
   }
 
 }

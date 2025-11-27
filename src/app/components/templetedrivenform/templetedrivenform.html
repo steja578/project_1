@@ -1,11 +1,15 @@
 <h3 class="text-center "> templete driven form</h3>
 
 
-<div class = "border border-2 rounded-2 m-2 p-2">
+<div class = "border border-4 rounded-2 m-2 p-2">
     <form #signUpForm="ngForm" (submit)="submitForm(signUpForm)"> 
             <p>
             FirstName:
-            <input name="firstName" ngModel/>
+            <input name="firstName" #firstName="ngModel" ngModel required />
+            @if(firstName.hasError('required') && firstName.dirty)
+            { 
+                <span class="text-danger ">*</span>
+            }
              </p>
             <p>
                 LastName:
@@ -28,10 +32,10 @@
 
             </div> 
             <input type="reset" value="Clear" class="btn btn-danger ml-5">
-            <input type="Submit" value="Submit"  class="btn btn-primary ml-5">
+            <input type="Submit" value="Submit" [disabled]="signUpForm.invalid" class="btn btn-primary ml-5">
     </form>
     <hr>
-    <pre>
+    <pre> 
         {{signUpForm.value | json}}
     </pre>
 </div>
