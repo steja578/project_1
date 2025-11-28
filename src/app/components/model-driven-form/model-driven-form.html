@@ -1,0 +1,44 @@
+<h3 class="text-center">model driven form</h3>
+
+<div class="border border-4 rounded-2 m-2 p-2">
+  <form [formGroup]="signUpForm" (submit)="submitMyForm()">
+    <p>
+      FirstName:
+      <input formControlName="firstName" />
+    
+      @if(signUpForm.controls['firstName'].hasError('required')) {
+      <span class="text-danger"> FirstName is Required</span>
+      }
+      @if(signUpForm.controls['firstName'].hasError('minLength')) {
+      <span class="text-danger"> FirstName should have min 5 characters</span>
+      }
+    </p>
+    <p>
+      LastName:
+      <input formControlName="lastName" />
+    </p>
+    <p>
+      Email:
+      <input formControlName="email" />
+    </p>
+    <div formGroupName="address">
+      <p>
+        City:
+        <input formControlName="city" />
+      </p>
+      <p>State:</p>
+      <p>
+        Pincode:
+        <input formControlName="pincode" />
+      </p>
+    </div>
+    <input type="reset" value="Clear" class="btn btn-danger ml-5" />
+    <input
+      type="submit"
+      value="Submit"
+      [disabled]="signUpForm.invalid"
+      class="btn btn-primary ml-5"
+    />
+  </form>
+  <pre>{{ signUpForm.value | json }}</pre>
+</div>

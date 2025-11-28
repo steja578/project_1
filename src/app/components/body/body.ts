@@ -23,6 +23,8 @@ import { Revision } from '../revision/revision';
 import { Test } from '../test/test';
 import { Formsdemo1 } from "../formsdemo1/formsdemo1";
 import { Templetedrivenform } from "../templetedrivenform/templetedrivenform";
+import { ModelDrivenForm } from "../model-driven-form/model-driven-form";
+import { DynamicForm } from "../dynamic-form/dynamic-form";
 
 @Component({
   selector: 'app-body',
@@ -48,10 +50,11 @@ import { Templetedrivenform } from "../templetedrivenform/templetedrivenform";
     // Stockdata
     // Test
     // ObservableDemo
-    Templetedrivenform
-    ,
-    Formsdemo1,
-    Templetedrivenform
+    // Templetedrivenform,
+    // Formsdemo1,
+    // Templetedrivenform,
+    ModelDrivenForm,
+    DynamicForm
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
