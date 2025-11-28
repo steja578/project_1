@@ -25,6 +25,7 @@ import { Formsdemo1 } from "../formsdemo1/formsdemo1";
 import { Templetedrivenform } from "../templetedrivenform/templetedrivenform";
 import { ModelDrivenForm } from "../model-driven-form/model-driven-form";
 import { DynamicForm } from "../dynamic-form/dynamic-form";
+import { TempletedrivenAssignment } from "../templetedriven-assignment/templetedriven-assignment";
 
 @Component({
   selector: 'app-body',
@@ -53,8 +54,9 @@ import { DynamicForm } from "../dynamic-form/dynamic-form";
     // Templetedrivenform,
     // Formsdemo1,
     // Templetedrivenform,
-    ModelDrivenForm,
-    DynamicForm
+    // ModelDrivenForm,
+    // DynamicForm,
+    TempletedrivenAssignment
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

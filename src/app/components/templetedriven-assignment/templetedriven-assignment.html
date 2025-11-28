@@ -1,44 +1,110 @@
-<!-- <h3 class="text-center">model driven form</h3>
+<h3 class="text-center">Registration Form</h3>
 
-<div class="border border-4 rounded-2 m-2 p-2">
-  <form [formGroup]="signUpForm" (submit)="submitMyForm()">
+<div class="col-sm-6 offset-3 border border-3 rounded-3 p-3 m-3">
+  <form #registrationForm="ngForm" (submit)="submitForm(registrationForm)">
     <p>
       FirstName:
-      <input formControlName="firstName" />
-    
-      @if(signUpForm.controls['firstName'].hasError('required')) {
-      <span class="text-danger"> FirstName is Required</span>
-      }
-      @if(signUpForm.controls['firstName'].hasError('minLength')) {
-      <span class="text-danger"> FirstName should have min 5 characters</span>
-      }
+      <input type="text" name="firstName" #firstName="ngModel" ngModel required minlength="5" />
+      @if(firstName.invalid && (firstName.dirty || firstName.touched)){
+      @if(firstName.hasError('required')){
+      <span class="text-danger">First Name is Required</span>
+      } @if(firstName.hasError('minlength')){
+      <span class="text-danger">First Name should have 5 characters</span>
+      } }
     </p>
     <p>
       LastName:
-      <input formControlName="lastName" />
+      <input type="text" name="lastName" #lastName="ngModel" ngModel required minlength="5" />
+      @if(lastName.invalid && (lastName.dirty || lastName.touched)){
+      @if(lastName.hasError('required')){
+      <span class="text-danger">Last Name is Required</span>
+      } @if(lastName.hasError('minlength')){
+      <span class="text-danger">Last Name should have 5 characters</span>
+      } }
     </p>
     <p>
       Email:
-      <input formControlName="email" />
+      <input type="email" name="email" #email="ngModel" ngModel required email />
+      @if(email.invalid && (email.dirty || email.touched)){ @if(email.hasError('required')){
+      <span class="text-danger">Email is Required</span>
+      } @if(email.hasError('minlength')){
+      <span class="text-danger">Email should have 5 characters</span>
+      } }
     </p>
-    <div formGroupName="address">
-      <p>
-        City:
-        <input formControlName="city" />
-      </p>
-      <p>State:</p>
-      <p>
-        Pincode:
-        <input formControlName="pincode" />
-      </p>
-    </div>
+    <p>
+      Password:
+      <input type="password" name="password" #password="ngModel" ngModel required minlength="8" />
+      @if(password.invalid && (password.dirty || password.touched)){
+      @if(password.hasError('required')){
+      <span class="text-danger">Password is Required</span>
+      } @if(password.hasError('minlength')){
+      <span class="text-danger">Password should have 8 characters</span>
+      } }
+    </p>
+    <p>
+      Gender:
+      <input type="radio" name="gender" value="male" #gender="ngModel" ngModel required /> Male
+      <input type="radio" name="gender" value="female" #gender="ngModel" ngModel required /> Female
+    </p>
+    <p>
+      Martial Status:
+      <input type="radio" name="martialStatus" value="single" #martialStatus="ngModel" ngModel required />
+     
+      Single:
+      <input type="radio" name="martialStatus"value="married" #martialStatus="ngModel" ngModel required/>
+      Married:
+      <input
+        type="radio"
+        name="martialStatus"
+        value="divorced"
+        #martialStatus="ngModel"
+        ngModel
+        required
+      />
+      Divorced
+    </p>
+    <p>
+      Country:
+      <select name="country" #country="ngModel" ngModel required>
+        <option value="">Select Country</option>
+        <option value="usa">USA</option>
+        <option value="india">India</option>
+        <option value="uk">UK</option>
+        <option value="canada">Canada</option>
+        <option value="mexico">Mexico</option>
+      </select>
+    </p>
+    <p>
+      Address:
+      <textarea
+        name="fullAddress"
+        #fullAddress="ngModel"
+        ngModel
+        required
+        minlength="10"
+      ></textarea>
+      @if(fullAddress.invalid && (fullAddress.dirty || fullAddress.touched)){
+      @if(fullAddress.hasError('required')){
+      <span class="text-danger">fullAddress is Required</span>
+      } @if(fullAddress.hasError('minlength')){
+      <span class="text-danger">fullAddress should have 10 characters</span>
+      } }
+    </p>
+    <p>
+      <input type="checkbox" name="terms" #terms="ngModel" ngModel required /> I accept the Terms &
+      Conditions
+    </p>
     <input type="reset" value="Clear" class="btn btn-danger ml-5" />
     <input
       type="submit"
       value="Submit"
-      [disabled]="signUpForm.invalid"
-      class="btn btn-primary ml-5"
+      [disabled]="registrationForm.invalid"
+      class="btn btn-primary mx-5"
     />
   </form>
-  <pre>{{ signUpForm.value | json }}</pre>
-</div> -->
+  <hr />
+  <pre
+    >{{ registrationForm.value | json }}
+</pre>
+<h4>Form Status:{{registrationForm.status}}</h4>
+</div>
