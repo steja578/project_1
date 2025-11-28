@@ -26,6 +26,7 @@ import { Templetedrivenform } from "../templetedrivenform/templetedrivenform";
 import { ModelDrivenForm } from "../model-driven-form/model-driven-form";
 import { DynamicForm } from "../dynamic-form/dynamic-form";
 import { TempletedrivenAssignment } from "../templetedriven-assignment/templetedriven-assignment";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -56,7 +57,8 @@ import { TempletedrivenAssignment } from "../templetedriven-assignment/templeted
     // Templetedrivenform,
     // ModelDrivenForm,
     // DynamicForm,
-    TempletedrivenAssignment
+    // TempletedrivenAssignment,
+    RouterOutlet
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
