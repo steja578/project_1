@@ -49,19 +49,11 @@
     <p>
       Martial Status:
       <input type="radio" name="martialStatus" value="single" #martialStatus="ngModel" ngModel required />
-     
-      Single:
-      <input type="radio" name="martialStatus"value="married" #martialStatus="ngModel" ngModel required/>
-      Married:
-      <input
-        type="radio"
-        name="martialStatus"
-        value="divorced"
-        #martialStatus="ngModel"
-        ngModel
-        required
-      />
-      Divorced
+
+      Single
+      <input type="radio" name="martialStatus" value="married" #martialStatus="ngModel" ngModel required/>
+      Married
+      
     </p>
     <p>
       Country:
@@ -70,19 +62,18 @@
         <option value="usa">USA</option>
         <option value="india">India</option>
         <option value="uk">UK</option>
-        <option value="canada">Canada</option>
-        <option value="mexico">Mexico</option>
+      
       </select>
     </p>
     <p>
       Address:
       <textarea
-        name="fullAddress" #fullAddress="ngModel" ngModel required minlength="10"></textarea>
+        name="fullAddress" #fullAddress="ngModel" ngModel required minlength="15"></textarea>
       @if(fullAddress.invalid && (fullAddress.dirty || fullAddress.touched)){
       @if(fullAddress.hasError('required')){
       <span class="text-danger">fullAddress is Required</span>
       } @if(fullAddress.hasError('minlength')){
-      <span class="text-danger">fullAddress should have 10 characters</span>
+      <span class="text-danger">fullAddress should have 15 characters</span>
       } }
     </p>
     <p>
@@ -90,12 +81,7 @@
       Conditions
     </p>
     <input type="reset" value="Clear" class="btn btn-danger ml-5" />
-    <input
-      type="submit"
-      value="Submit"
-      [disabled]="registrationForm.invalid"
-      class="btn btn-primary mx-5"
-    />
+    <input type="submit" value="Submit" [disabled]="registrationForm.invalid" class="btn btn-primary mx-5"/>
   </form>
   <hr />
   <pre
