@@ -77,12 +77,7 @@
     <p>
       Address:
       <textarea
-        name="fullAddress"
-        #fullAddress="ngModel"
-        ngModel
-        required
-        minlength="10"
-      ></textarea>
+        name="fullAddress" #fullAddress="ngModel" ngModel required minlength="10"></textarea>
       @if(fullAddress.invalid && (fullAddress.dirty || fullAddress.touched)){
       @if(fullAddress.hasError('required')){
       <span class="text-danger">fullAddress is Required</span>
