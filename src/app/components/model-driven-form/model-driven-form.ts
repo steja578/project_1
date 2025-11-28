@@ -9,11 +9,16 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
   styleUrl: './model-driven-form.css',
 })
 export class ModelDrivenForm {
-signUpForm: FormGroup;
-formBuilder = inject(FormBuilder)
+signUpForm!: FormGroup;
+formBuilder = inject(FormBuilder);
 
-constructor()
-{ 
+constructor(){
+  // this.usingFormGroup();
+  this.usingFormBuilder();
+  }
+ 
+  usingFormGroup()
+  {
   this.signUpForm = new FormGroup({
     firstName : new FormControl('tej',[Validators.required, Validators.minLength(5)]),
     lastName: new FormControl(),
@@ -23,12 +28,24 @@ constructor()
       state: new FormControl(),
       pincode: new FormControl(), 
     })
-
-},{updateOn:'blur'});//change/blur/submit
+  },{updateOn:'blur'});//change/blur/submit
 }
+usingFormBuilder(){
+  this.signUpForm = this.formBuilder.group(
+    {
+      firstName : ['tejj',[Validators.required, Validators.minLength(5)]],
+         lastName: [''],
+    email: [''],
+    address: this.formBuilder.group({
+      city: [''],
+      state: [''],
+      pincode: [''], 
+    })
+});
+}
+
 submitMyForm(){
   console.log(this.signUpForm);
   console.log(this.signUpForm.value);
 }
 }
-
