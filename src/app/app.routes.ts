@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path:'aboutus', component:Aboutus},
     {path:'careers', component:Careers},
     {path:'contactus', component:Contactus},
-    {path:'user-details/:id', component:UserDetails},//it will take paraemeter
+    // {path:'user-details/:id', component:UserDetails},//it will take paraemeter
     {path:'', component: Home},//nothing found go to home
     {path:'**', component:Notfound },// if the url is not found it will redirect to notfound component
     
